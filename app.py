@@ -89,7 +89,6 @@ if original_file and student_files:
         excel_file = io.BytesIO()
         with pd.ExcelWriter(excel_file, engine='xlsxwriter') as writer:
             df.to_excel(writer, index=False, sheet_name='Results')
-            writer.save()
         st.download_button(
             label="⬇️ Download Excel Report",
             data=excel_file.getvalue(),
