@@ -18,26 +18,6 @@ def load_model():
 
 model = load_model()
 
-st.title("🎓 Graphic Design Assignment Evaluator")
-
-# 📄 App Description
-st.markdown("""
-### 📄 About This App
-
-**Graphic Design Assignment Evaluator** helps teachers quickly check multiple student submissions at once.
-
-Just upload:
-- **One original design**
-- **A folder with all student designs**
-
-The app will:
-- Compare each submission with the original  
-- Show a similarity **score and feedback**  
-- Display all results with images side by side  
-- Let you **download a full Excel report**
-
-Built to save time for teachers and design instructors by automating the assignment checking process.
-""")
 
 def extract_features(img):
     img = img.resize((224, 224)).convert('RGB')
@@ -121,4 +101,26 @@ elif original_file and not student_files:
     st.warning("⚠️ Please upload one or more student submission images.")
 elif not original_file:
     st.info("📌 Please upload the original design first.")
+
+st.title("🎓 Graphic Design Assignment Evaluator")
+
+# 📄 App Description
+st.markdown("""
+### 📄 About This App
+
+**Graphic Design Assignment Evaluator** helps teachers quickly check multiple student submissions at once.
+
+Just upload:
+- **One original design**
+- **A folder with all student designs**
+
+The app will:
+- Compare each submission with the original  
+- Show a similarity **score and feedback**  
+- Display all results with images side by side  
+- Let you **download a full Excel report**
+
+Built to save time for teachers and design instructors by automating the assignment checking process.
+""")
+
 
