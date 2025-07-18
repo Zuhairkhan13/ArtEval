@@ -19,4 +19,4 @@ Check out the live app here:
 
 ---
 
-Made with ❤️ by Zuhair Khan Boss
+Made by Zuhair Khan
