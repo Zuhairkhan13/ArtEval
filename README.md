@@ -9,7 +9,7 @@ ArtEval is a simple AI-powered web app that evaluates the artistic quality of an
 
 ### 🚀 Live Demo
 Check out the live app here:  
-👉 [ArtEval Web App](https://arteval01.streamlit.app/) *(Replace with your actual link)*
+👉 [ArtEval Web App](https://arteval01.streamlit.app/) 
 
 ### 🧠 Tech Stack
 - Python
