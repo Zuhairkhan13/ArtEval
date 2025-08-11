@@ -18,7 +18,6 @@ def load_model():
 
 model = load_model()
 
-
 def extract_features(img):
     img = img.resize((224, 224)).convert('RGB')
     img_data = image.img_to_array(img)
@@ -35,13 +34,13 @@ def calculate_similarity_score(img1, img2):
 
 def generate_feedback(score):
     if score >= 90:
-        return "🌟 Excellent! Highly similar to the original."
+        return "Pass: 🌟 Excellent! Highly similar to the original."
     elif score >= 70:
-        return "👍 Good! Close to the original with minor differences."
+        return "Pass: 👍 Good! Close to the original with minor differences."
     elif score >= 50:
-        return "⚠️ Average. Needs improvement in some areas."
+        return "Fail: ⚠️ Average. Needs improvement in some areas."
     else:
-        return "❌ Poor. Too different from the original."
+        return "Fail: ❌ Poor. Too different from the original."
 
 # UI
 st.markdown("<h1 style='text-align: center;'>🎨 Graphic Assignment Evaluator</h1>", unsafe_allow_html=True)
@@ -74,13 +73,11 @@ if original_file and student_files:
         with col1:
             st.image(student_image, width=150, caption=student_file.name)
         with col2:
-            st.markdown(f"**Score:** `{score}/100`")
             st.markdown(f"**Feedback:** _{feedback}_")
         st.markdown("---")
 
         results.append({
             "Student File": student_file.name,
-            "Score": score,
             "Feedback": feedback
         })
 
@@ -101,7 +98,6 @@ elif original_file and not student_files:
     st.warning("⚠️ Please upload one or more student submission images.")
 elif not original_file:
     st.info("📌 Please upload the original design first.")
-
 st.title("🎓 Graphic Design Assignment Evaluator")
 
 # 📄 App Description
